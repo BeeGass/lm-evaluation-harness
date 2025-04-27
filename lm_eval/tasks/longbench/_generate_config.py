@@ -184,8 +184,8 @@ if __name__ == "__main__":
             until = []
         generation_kwargs = {
             "max_gen_toks": dataset2maxlen[df],
-            "temperature": 1,
-            "do_sample": True,
+            "temperature": 0,
+            "do_sample": False,
             "until": until,
         }
         raw_doc_to_text = (
@@ -211,7 +211,7 @@ if __name__ == "__main__":
             "test_split": "test",
             "dataset_name": ds,
             "doc_to_text": raw_doc_to_text,
-            "doc_to_target": "{{answers[0]}}",
+            "doc_to_target": "{{answers}}",
             "generation_kwargs": generation_kwargs,
             "metric_list": metric_list,
             "metadata": {"version": "2.0"},

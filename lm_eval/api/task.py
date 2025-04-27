@@ -946,7 +946,7 @@ class ConfigurableTask(Task):
             eval_logger.debug(
                 "doc_to_target returned a list. Assuming multiple targets."
             )
-            self.multiple_target = len(test_target)
+            # self.multiple_target = len(test_target)
         else:
             if (isinstance(test_target, int)) and (test_choice is not None):
                 test_target = test_choice[test_target]
@@ -1664,7 +1664,8 @@ class ConfigurableTask(Task):
                 "bypass" in self._metric_fn_list.keys() or isinstance(result, list)
             ):
                 # cast gold to the same type as result
-                gold = type(result)(gold)
+                # gold = type(result)(gold)
+                pass
 
             for metric in self._metric_fn_list.keys():
                 if self.multiple_target:
